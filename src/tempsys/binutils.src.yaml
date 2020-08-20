@@ -1,5 +1,0 @@
-name: binutils
-# version: 2.34-1
-remotes:
-  - url: "https://ftp.gnu.org/gnu/binutils/binutils-2.34.tar.xz"
-    sha3: "B865E78873D1DBB1E56DC4B41C0095D383C65231DAE4DF522F681C70B6B3D976"

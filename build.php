@@ -92,6 +92,7 @@ foreach(new RegexIterator(new RecursiveIteratorIterator(new RecursiveDirectoryIt
                 case "application/x-xz":
                 case "application/x-bzip2":
                 case "application/x-gzip":
+                case "application/gzip":
                 case "application/x-tar":
                     $write("RUN tar -xf /tmp/ablento_tmpfile -C ".escapeshellarg("/context".$destination));
                     break;
@@ -100,7 +101,7 @@ foreach(new RegexIterator(new RecursiveIteratorIterator(new RecursiveDirectoryIt
                     $write("RUN unzip /tmp/ablento_tmpfile -d ".escapeshellarg("/context".$destination));
                     break;
                 default:
-                    throw new RuntimeException("Invalid MIMe type for $hash: ".$mime);
+                    throw new RuntimeException("Invalid MIME type for $hash: ".$mime);
             }
             $strip = $remote["strip"] ?? null;
             // Force to ?bool
