@@ -1,0 +1,8 @@
+from: base
+name: temp-binutils
+source: binutils
+# version: 2.34-1
+script:
+    - ./configure --prefix=$LFS/tools --with-sysroot=$LFS --target=$LFS_TGT --disable-nls --disable-werror
+    - make -j`nproc`
+    - make install
