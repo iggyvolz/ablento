@@ -19,13 +19,12 @@ public class App
         // Get all sources
         ArrayList<Source> sources = new ArrayList<Source>();
         try (Stream<Path> walk = Files.walk(Paths.get("src"))) {
-            walk.filter(path->path.toFile().isFile()).filter(path->path.toFile().getName().endsWith(".src.yaml")).map(path->path.toFile()).forEach(file->{
+            walk.filter(path->path.toFile().isFile()).filter(path->path.toFile().getName().endsWith(".src.yaml")).map(Path::toFile).forEach(file->{
                 try {
                     System.out.println("Parsing " + file.getAbsolutePath());
                     sources.add(Source.read(file));
                 } catch(InvalidSourceException e) {
                     System.out.println("Error in source " + file.getAbsolutePath() + ": " + e.getMessage());
-                    return;
                 }
             });
         } catch(IOException e) {
@@ -35,7 +34,7 @@ public class App
         // System.out.println(ReflectionToStringBuilder.toString(sources.get(1),ToStringStyle.MULTI_LINE_STYLE));
         // Write all sources
         try(FileWriter fw = new FileWriter(new File("output/Dockerfile"))) {
-            fw.append("FROM alpine AS alpine-with-file\nRUN apk add file\n")
+            fw.append("FROM alpine AS remote-env\n");
             for (Source source : sources) {
                 try {
                     System.out.println("Saving " + source.getName());
@@ -47,7 +46,6 @@ public class App
             }
         } catch(IOException e) {
             System.out.println("Input/output exception: " + e.getMessage());
-            return;
         }
         // System.out.println(ReflectionToStringBuilder.toString(source,ToStringStyle.MULTI_LINE_STYLE));
     }

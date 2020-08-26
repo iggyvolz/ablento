@@ -2,9 +2,12 @@ package com.yingatech.ablento.parser;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
+import java.nio.file.Paths;
 import java.security.DigestInputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -20,15 +23,21 @@ import org.apache.commons.codec.binary.Hex;
  * Representation of a remote resource, identified by the URL that it can be fetched at, as well as a hash to verify the integrity
  */
 public class Remote {
-    @JsonProperty(required = true)
+    @JsonProperty
     private String url;
     @JsonProperty
     private String sha2;
     @JsonProperty
     private String sha3;
+    @JsonProperty
+    private String destination;
+    @JsonProperty
+    private Boolean extract;
+    @JsonProperty
+    private Boolean strip;
     /**
      * Computes the identifier name
-     * @return
+     * @return Filesystem-safe name which identifies this resource
      */
     private String getIdentifierName() throws InvalidSourceException {
         if(sha3 != null) {
@@ -116,8 +125,38 @@ public class Remote {
     public void save(Appendable writer) throws InvalidSourceException, IOException {
         // Build remote as stage
         String identifier = getIdentifier();
-        writer.append("FROM alpine-with-file AS " + identifier + "-build\n");
+        writer.append("FROM remote-env AS remote-").append(identifier).append("-build\n");
         writer.append("RUN mkdir /context\n");
-        writer.append("COPY " + identifier + " /remote\n");
+        String basename;
+        try {
+            basename = Paths.get(new URI(url).getPath()).getFileName().toString();
+        } catch(URISyntaxException e) {
+            throw new InvalidSourceException("Invalid URI : " + e.getMessage());
+        }
+        if(extract == null) {
+            // Compute default value from basename of URL
+            extract = basename.endsWith(".tar.gz") || basename.endsWith(".tar.xz") || basename.endsWith(".tar.bz2") || basename.endsWith(".tar") || basename.endsWith(".zip");
+        }
+        if(destination == null) {
+            destination = extract ? "/" : ("/" + basename);
+        }
+        if(extract) {
+            writer.append("COPY ").append(identifier).append(" /context-compressed\n");
+            writer.append("RUN mkdir -p /context/").append(destination).append(" && cd /context/").append(destination).append(" && tar xf /context-compressed || unzip /context-compressed\n");
+        } else {
+            writer.append("COPY ").append(identifier).append(" /context/").append(destination).append("\n");
+        }
+        if(strip == null || strip) {
+            // Detect whether to strip, and strip a directory if possible
+            writer.append("RUN if test `ls -A /context|wc -l` -eq 1; then mv /context /_context; mv /_context/* /context; ");
+            if(strip != null) {
+                // Err on failure
+                writer.append("else echo Failed to strip; exit 1; ");
+            }
+            writer.append("fi\n");
+        }
+        // Take only /context dir for final package
+        writer.append("FROM scratch AS remote-").append(identifier).append("\n");
+        writer.append("COPY --from=remote-").append(identifier).append("-build /context /\n");
     }
 }
