@@ -3,7 +3,7 @@ FROM debian
 RUN ln -sf /bin/bash /bin/sh
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN apt-get install -y build-essential bison gawk python3 texinfo
+RUN apt-get install -y build-essential bison gawk python3 texinfo flex
 RUN mkdir -p /lfs/{usr,lib,var,etc,bin,sbin,lib64,build,tools}
 RUN groupadd lfs
 RUN useradd -s /bin/bash -g lfs -m -k /dev/null lfs

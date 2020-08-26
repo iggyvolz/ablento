@@ -1,0 +1,2 @@
+Build: mvn package
+Run: mvn exec:java -Dexec.mainClass="com.yingatech.ablento.parser.App"
