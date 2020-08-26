@@ -60,7 +60,7 @@ public class Remote {
     }
     /**
      * Gets the identifier for the remote
-     * @return Identifeir for the remote, located in remotes/
+     * @return Identifier for the remote, located in remotes/
      */
     public String getIdentifier() throws InvalidSourceException {
         String identifier = getIdentifierName();
@@ -110,5 +110,14 @@ public class Remote {
         if(sha3 != null) {
             checkHash(file, "SHA3-256", sha3);
         }
+    }
+
+
+    public void save(Appendable writer) throws InvalidSourceException, IOException {
+        // Build remote as stage
+        String identifier = getIdentifier();
+        writer.append("FROM alpine-with-file AS " + identifier + "-build\n");
+        writer.append("RUN mkdir /context\n");
+        writer.append("COPY " + identifier + " /remote\n");
     }
 }

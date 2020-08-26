@@ -20,7 +20,7 @@ public class Source {
 
     public void save(Appendable writer) throws IOException, InvalidSourceException {
         for (Remote remote : remotes) {
-            writer.append(remote.getIdentifier() + "\n");
+            remote.save(writer);
         }
     }
     public static Source read(File file) throws InvalidSourceException {

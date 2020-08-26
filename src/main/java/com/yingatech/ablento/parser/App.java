@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Vector;
 import java.util.stream.Stream;
 
@@ -15,7 +16,8 @@ public class App
 {
     public static void main( String[] args )
     {
-        Vector<Source> sources = new Vector<Source>();
+        // Get all sources
+        ArrayList<Source> sources = new ArrayList<Source>();
         try (Stream<Path> walk = Files.walk(Paths.get("src"))) {
             walk.filter(path->path.toFile().isFile()).filter(path->path.toFile().getName().endsWith(".src.yaml")).map(path->path.toFile()).forEach(file->{
                 try {
@@ -30,8 +32,10 @@ public class App
             System.out.println("I/O exception while searching for files: " + e.getMessage());
             return;
         }
-        System.out.println(ReflectionToStringBuilder.toString(sources.get(1),ToStringStyle.MULTI_LINE_STYLE));
-        try(FileWriter fw = new FileWriter(new File("Dockerfile"))) {
+        // System.out.println(ReflectionToStringBuilder.toString(sources.get(1),ToStringStyle.MULTI_LINE_STYLE));
+        // Write all sources
+        try(FileWriter fw = new FileWriter(new File("output/Dockerfile"))) {
+            fw.append("FROM alpine AS alpine-with-file\nRUN apk add file\n")
             for (Source source : sources) {
                 try {
                     System.out.println("Saving " + source.getName());
