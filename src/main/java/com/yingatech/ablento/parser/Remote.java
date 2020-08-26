@@ -2,14 +2,12 @@ package com.yingatech.ablento.parser;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URL;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
 import java.security.DigestInputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Optional;
 import java.util.regex.Pattern;
 import java.io.File;
 import java.io.FileInputStream;
@@ -54,7 +52,7 @@ public class Remote {
      */
     private File download(String identifier) throws IOException {
         ReadableByteChannel input = Channels.newChannel(new URL(url).openStream());
-        File file = new File("remotes/"+identifier);
+        File file = new File("output/"+identifier);
         try (FileOutputStream output = new FileOutputStream(file)) {
             output.getChannel().transferFrom(input, 0, Long.MAX_VALUE);
         }

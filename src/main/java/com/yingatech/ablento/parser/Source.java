@@ -31,4 +31,12 @@ public class Source {
             throw new InvalidSourceException("Input/output exception in source: " + e.getMessage());
         }
     }
+    public static Source read(String file) throws InvalidSourceException {
+        ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
+        try {
+            return mapper.readValue(file, Source.class);
+        } catch(IOException e) {
+            throw new InvalidSourceException("Input/output exception in source: " + e.getMessage());
+        }
+    }
 }

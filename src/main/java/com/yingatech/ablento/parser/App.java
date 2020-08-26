@@ -16,7 +16,7 @@ public class App
     public static void main( String[] args )
     {
         Vector<Source> sources = new Vector<Source>();
-        try (Stream<Path> walk = Files.walk(Paths.get("../src"))) {
+        try (Stream<Path> walk = Files.walk(Paths.get("src"))) {
             walk.filter(path->path.toFile().isFile()).filter(path->path.toFile().getName().endsWith(".src.yaml")).map(path->path.toFile()).forEach(file->{
                 try {
                     System.out.println("Parsing " + file.getAbsolutePath());
