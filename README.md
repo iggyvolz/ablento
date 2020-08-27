@@ -2,12 +2,6 @@
 Sources end with .src.yaml
 ## name
 Name of the source
-## version
-Version of the source
-
-If a build with the same version exists, it may ignore any changes and treat the source as already built.
-
-If omitted, the source will be rebuilt every time.
 ## remotes
 Lists the files that need to be downloaded for this source.
 
@@ -37,16 +31,11 @@ Script that is run to prepare the final source - list of strings.  Defaults to e
 A package ends in .pkg.yaml
 ## name
 Name of the package
-## version
-Version of the package
-
-If a build with the same version exists, it may ignore any changes and treat the package as already built.
-
-If omitted, the package will be rebuilt every time.
 ## from
 Package that this should build from.
-## source/sources
-Source or list of sources.  Can be either a list or a single entry.  If an entry is a string, all defaults are used except name.
+## source
+Source or list of sources.
+Of the form: name:destination,name:destination (destination may be omitted)
 ### name
 Name of the source
 ### destination

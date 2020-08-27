@@ -1,5 +1,4 @@
 name: binutils
-version: 2.35-1
 remotes:
   - url: https://ftp.gnu.org/gnu/binutils/binutils-2.35.tar.xz
     sha3: "5799c659dbd6be966865193beaa3bf65233cda6cfbae62ceae44d216bac8c57c"

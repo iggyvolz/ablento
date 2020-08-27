@@ -1,4 +1,4 @@
-FROM debian
+FROM debian as base
 # Force use of bash
 RUN ln -sf /bin/bash /bin/sh
 RUN apt-get update
@@ -13,6 +13,7 @@ ENV LFS=/lfs
 ENV LC_ALL=POSIX
 ENV LFS_TGT=x86_64-lfs-linux-gnu
 ENV PATH=/lfs/tools/bin:/bin:/usr/bin
+ENV BUILDDIR=/lfs/build
 
 # TESTS
 # Check environment is proper

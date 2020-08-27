@@ -125,8 +125,6 @@ public class Remote {
     public void save(Appendable writer) throws InvalidSourceException, IOException {
         // Build remote as stage
         String identifier = getIdentifier();
-        writer.append("FROM remote-env AS remote-").append(identifier).append("-build\n");
-        writer.append("RUN mkdir /context\n");
         String basename;
         try {
             basename = Paths.get(new URI(url).getPath()).getFileName().toString();
@@ -155,8 +153,5 @@ public class Remote {
             }
             writer.append("fi\n");
         }
-        // Take only /context dir for final package
-        writer.append("FROM scratch AS remote-").append(identifier).append("\n");
-        writer.append("COPY --from=remote-").append(identifier).append("-build /context /\n");
     }
 }

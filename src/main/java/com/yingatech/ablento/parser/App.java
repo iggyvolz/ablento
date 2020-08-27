@@ -3,11 +3,8 @@ package com.yingatech.ablento.parser;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Vector;
+import java.nio.file.*;
+import java.util.*;
 import java.util.stream.Stream;
 
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
@@ -16,13 +13,21 @@ public class App
 {
     public static void main( String[] args )
     {
+        // Overwrite Dockerfile with base
+        try {
+            Files.copy(new File("base.Dockerfile").toPath(), new File("output/Dockerfile").toPath(), StandardCopyOption.REPLACE_EXISTING);
+        } catch (IOException e) {
+            System.out.println("Could not copy base dockerfile: " + e.getMessage());
+            return;
+        }
         // Get all sources
-        ArrayList<Source> sources = new ArrayList<Source>();
+        HashMap<String, Source> sources = new HashMap<>();
         try (Stream<Path> walk = Files.walk(Paths.get("src"))) {
             walk.filter(path->path.toFile().isFile()).filter(path->path.toFile().getName().endsWith(".src.yaml")).map(Path::toFile).forEach(file->{
                 try {
                     System.out.println("Parsing " + file.getAbsolutePath());
-                    sources.add(Source.read(file));
+                    Source source = Source.read(file);
+                    sources.put(source.getName(), source);
                 } catch(InvalidSourceException e) {
                     System.out.println("Error in source " + file.getAbsolutePath() + ": " + e.getMessage());
                 }
@@ -33,11 +38,11 @@ public class App
         }
         // System.out.println(ReflectionToStringBuilder.toString(sources.get(1),ToStringStyle.MULTI_LINE_STYLE));
         // Write all sources
-        try(FileWriter fw = new FileWriter(new File("output/Dockerfile"))) {
-            fw.append("FROM alpine AS remote-env\n");
-            for (Source source : sources) {
+        try(FileWriter fw = new FileWriter(new File("output/Dockerfile"), true)) {
+            fw.append("FROM alpine AS source-env\n");
+            for (Source source : sources.values()) {
                 try {
-                    System.out.println("Saving " + source.getName());
+                    System.out.println("Writing source " + source.getName());
                     source.save(fw);
                 } catch(InvalidSourceException e) {
                     System.out.println("Invalid source: " + e.getMessage());
@@ -48,5 +53,44 @@ public class App
             System.out.println("Input/output exception: " + e.getMessage());
         }
         // System.out.println(ReflectionToStringBuilder.toString(source,ToStringStyle.MULTI_LINE_STYLE));
+
+
+        // Get all packages
+        HashMap<String, Package> packages = new HashMap<>();
+        try (Stream<Path> walk = Files.walk(Paths.get("src"))) {
+            walk.filter(path->path.toFile().isFile()).filter(path->path.toFile().getName().endsWith(".pkg.yaml")).map(Path::toFile).forEach(file->{
+                try {
+                    System.out.println("Parsing " + file.getAbsolutePath());
+                    Package pkg = Package.read(file);
+                    packages.put(pkg.getName(), pkg);
+                } catch(InvalidPackageException e) {
+                    System.out.println("Error in source " + file.getAbsolutePath() + ": " + e.getMessage());
+                }
+            });
+        } catch(IOException e) {
+            System.out.println("I/O exception while searching for files: " + e.getMessage());
+            return;
+        }
+
+        Set<String> sourceNames = new HashSet<>(sources.keySet());
+        // Add builtin sources
+        sourceNames.add("base");
+
+
+        // Write all packages
+        try(FileWriter fw = new FileWriter(new File("output/Dockerfile"), true)) {
+            for (Package pkg: packages.values()) {
+                try {
+                    System.out.println("Writing package " + pkg.getName());
+                    pkg.save(fw, sourceNames);
+                } catch(InvalidPackageException e) {
+                    System.out.println("Invalid package: " + e.getMessage());
+                    return;
+                }
+            }
+        } catch(IOException e) {
+            System.out.println("Input/output exception: " + e.getMessage());
+        }
+
     }
 }
