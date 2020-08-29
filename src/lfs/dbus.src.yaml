@@ -1,0 +1,4 @@
+name: dbus
+remotes:
+  - url: https://dbus.freedesktop.org/releases/dbus/dbus-1.12.20.tar.gz
+    sha3: cc89baf3721125d3efa6e5f22c9732a1ff06f41df95f5004dbc4e1a467d3aa74

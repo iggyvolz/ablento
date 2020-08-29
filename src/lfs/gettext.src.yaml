@@ -1,0 +1,4 @@
+name: gettext
+remotes:
+  - url: https://ftp.gnu.org/gnu/gettext/gettext-0.21.tar.xz
+    sha3: 44a2077a6d04eb440593cd0d25e69a4934355fecfd7c23de4ebb087f2e4f7f27

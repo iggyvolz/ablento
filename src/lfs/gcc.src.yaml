@@ -1,4 +1,4 @@
 name: gcc
 remotes:
-  - url: "http://ftp.gnu.org/gnu/gcc/gcc-10.2.0/gcc-10.2.0.tar.xz"
-    sha3: "af50dc1620c255755af0c0474b8005f68f8cc95495068902157a9b6b33e78940"
+  - url: https://ftp.gnu.org/gnu/gcc/gcc-10.2.0/gcc-10.2.0.tar.xz
+    sha3: af50dc1620c255755af0c0474b8005f68f8cc95495068902157a9b6b33e78940

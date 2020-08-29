@@ -1,0 +1,4 @@
+name: findutils
+remotes:
+  - url: https://ftp.gnu.org/gnu/findutils/findutils-4.7.0.tar.xz
+    sha3: 7b22790f472b8ff91c41ed07a118dfe4591055fb6d7016ed88d869cabf90007a

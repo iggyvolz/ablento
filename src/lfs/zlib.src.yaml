@@ -1,0 +1,4 @@
+name: zlib
+remotes:
+  - url: https://zlib.net/zlib-1.2.11.tar.xz
+    sha3: e3be5eca944d9b9260a195f00471708dca3a6c7840fc8d6ba064522ae4e5a727

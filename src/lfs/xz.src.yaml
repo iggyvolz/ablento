@@ -1,0 +1,4 @@
+name: xz
+remotes:
+  - url: https://tukaani.org/xz/xz-5.2.5.tar.xz
+    sha3: 0f2a577d5607bf677bce645ae55d60e4807c5ef0c832f7b5cbb9f1cf0c640ad5

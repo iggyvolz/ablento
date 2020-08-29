@@ -1,0 +1,4 @@
+name: iproute2
+remotes:
+  - url: https://www.kernel.org/pub/linux/utils/net/iproute2/iproute2-5.8.0.tar.xz
+    sha3: 828f829e85c4c2568ff8b5926818ccb8cb655a0656d34e3e3448e2ae61846f04

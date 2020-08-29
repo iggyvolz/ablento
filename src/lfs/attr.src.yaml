@@ -1,0 +1,4 @@
+name: attr
+remotes:
+  - url: https://download.savannah.gnu.org/releases/attr/attr-2.4.48.tar.gz
+    sha3: e9d6d74982c8c529a08e63e676ccfc1ada2f4afe09cf70986394e0b9fa03142d

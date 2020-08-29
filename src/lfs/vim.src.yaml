@@ -1,0 +1,4 @@
+name: vim
+remotes:
+  - url: http://anduin.linuxfromscratch.org/LFS/vim-8.2.1361.tar.gz
+    sha3: acdd04d7beb6a4c0ba38e3ef1784f01e220958e849eac2e1fc88fd157e3a7e98

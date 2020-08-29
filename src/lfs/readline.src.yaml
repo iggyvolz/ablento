@@ -1,0 +1,4 @@
+name: readline
+remotes:
+  - url: https://ftp.gnu.org/gnu/readline/readline-8.0.tar.gz
+    sha3: 062b1022235bb1872da3170821057296f7e291b9e00aa88848284be06ef33ebf

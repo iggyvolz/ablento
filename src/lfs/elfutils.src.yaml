@@ -1,0 +1,4 @@
+name: elfutils
+remotes:
+  - url: https://sourceware.org/ftp/elfutils/0.180/elfutils-0.180.tar.bz2
+    sha3: f93cc904123dd3e2ebe63260570c1c58261a6694b1a5536aac1c9b6f3dbb2ebd

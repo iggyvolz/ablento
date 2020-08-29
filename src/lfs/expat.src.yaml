@@ -1,0 +1,4 @@
+name: expat
+remotes:
+  - url: https://prdownloads.sourceforge.net/expat/expat-2.2.9.tar.xz
+    sha3: 32d90d21596e1a363a842e859712902ca13fb8fd7ffb44a33cb60908e066a563

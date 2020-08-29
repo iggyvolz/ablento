@@ -1,0 +1,4 @@
+name: perl
+remotes:
+  - url: https://www.cpan.org/src/5.0/perl-5.32.0.tar.xz
+    sha3: b3b6bc74ac484a0267edc939872759a89199d99f86cbdb97a9a90e2d91bf2526

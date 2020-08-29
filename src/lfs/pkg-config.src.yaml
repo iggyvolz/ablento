@@ -1,0 +1,4 @@
+name: pkg-config
+remotes:
+  - url: https://pkg-config.freedesktop.org/releases/pkg-config-0.29.2.tar.gz
+    sha3: 4e1f57987ca19d048a2e89a46381c46cc6a3bc8a87ee1711ad6d23cd9d6c12d7

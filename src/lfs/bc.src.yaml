@@ -1,0 +1,4 @@
+name: bc
+remotes:
+  - url: https://github.com/gavinhoward/bc/releases/download/3.1.5/bc-3.1.5.tar.xz
+    sha3: c461f03fa93919dcdea4adddec8a2b2eefe93611677c341bb917f051dcced8a5

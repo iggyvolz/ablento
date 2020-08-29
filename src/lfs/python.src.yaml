@@ -1,0 +1,4 @@
+name: python
+remotes:
+  - url: https://www.python.org/ftp/python/3.8.5/Python-3.8.5.tar.xz
+    sha3: 12f23e020529b87c15abaec1c2546ae22cbd98aa94c347a660a99970f2faeb47

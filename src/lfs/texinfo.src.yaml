@@ -1,0 +1,4 @@
+name: texinfo
+remotes:
+  - url: https://ftp.gnu.org/gnu/texinfo/texinfo-6.7.tar.xz
+    sha3: e445adc6a687d0f5c35606438e1457dff207877a22df7e783d6ee97576d926d1

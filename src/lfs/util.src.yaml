@@ -1,0 +1,4 @@
+name: util
+remotes:
+  - url: https://www.kernel.org/pub/linux/utils/util-linux/v2.36/util-linux-2.36.tar.xz
+    sha3: b58089a01dcd287f7f62e02818977af38c0ba0c7ab5d5792ff15390130951134

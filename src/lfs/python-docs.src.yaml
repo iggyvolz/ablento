@@ -1,0 +1,4 @@
+name: python-docs
+remotes:
+  - url: https://www.python.org/ftp/python/doc/3.8.5/python-3.8.5-docs-html.tar.bz2
+    sha3: be9b12a5fb69bd14009df3aa6f09a9a8cd4b5ff54657c36abf275167a3192c02

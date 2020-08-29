@@ -1,0 +1,4 @@
+name: inetutils
+remotes:
+  - url: https://ftp.gnu.org/gnu/inetutils/inetutils-1.9.4.tar.xz
+    sha3: 64746d8f00fc8c212792d3be627bc30abb4caa64967a9b3bf5f6252b024ed7f6

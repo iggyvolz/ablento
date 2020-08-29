@@ -1,5 +1,5 @@
-from: tempsys_binutils
-name: tempsys_gcc
+from: xtoolchain_binutils
+name: xtoolchain_gcc
 source: gcc:/,mpfr:/mpfr,gmp:/gmp,mpc:/mpc
 script:
     - sed -e '/m64=/s/lib64/lib/' -i.orig gcc/config/i386/t-linux64

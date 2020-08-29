@@ -18,7 +18,7 @@ public class Source {
     private Remote[] remotes;
 
     public void save(Appendable writer) throws IOException, InvalidSourceException {
-        if(name == null || !Pattern.matches("^[a-zA-Z_]+$", name)) {
+        if(name == null || !Pattern.matches("^[a-zA-Z0-9_-]+$", name)) {
             throw new InvalidSourceException("Illegal name " + name);
         }
         // Set up source building context

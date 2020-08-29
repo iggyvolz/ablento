@@ -1,0 +1,4 @@
+name: bzip2
+remotes:
+  - url: http://www.linuxfromscratch.org/patches/lfs/10.0-rc1/bzip2-1.0.8-install_docs-1.patch
+    sha3: 683c5b79dc0c55a5091906cb9368513cad7fe38de998e1e2bbdf407c5c4dac43

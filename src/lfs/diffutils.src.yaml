@@ -1,0 +1,4 @@
+name: diffutils
+remotes:
+  - url: https://ftp.gnu.org/gnu/diffutils/diffutils-3.7.tar.xz
+    sha3: 1a1a0c8155556d58208b53c64467fb1e130e7a73fda71d7bc401ec2ae73526a8

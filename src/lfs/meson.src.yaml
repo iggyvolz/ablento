@@ -1,0 +1,4 @@
+name: meson
+remotes:
+  - url: https://github.com/mesonbuild/meson/releases/download/0.55.0/meson-0.55.0.tar.gz
+    sha3: 5da11de052959185ca7696b25b629590f047f65df91148897d8b0b507f1c7e65

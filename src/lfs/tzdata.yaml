@@ -1,0 +1,4 @@
+name: tzdata
+remotes:
+  - url: https://www.iana.org/time-zones/repository/releases/tzdata2020a.tar.gz
+    sha3: 73a2f74c6034fdce3f1e97813e8a0ad0567d127fcd1d77579f8c7bbae28d3b37

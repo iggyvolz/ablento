@@ -1,0 +1,4 @@
+name: dejagnu
+remotes:
+  - url: https://ftp.gnu.org/gnu/dejagnu/dejagnu-1.6.2.tar.gz
+    sha3: 01a23adfafa6ec20d317a627c2dffa11ea90270aa9b46ebf15365bf223b5e5f2

@@ -1,0 +1,4 @@
+name: systemd
+remotes:
+  - url: http://anduin.linuxfromscratch.org/LFS/systemd-man-pages-246.tar.xz
+    sha3: 1ca460b295a9637e4cba85ef32ae5ae1c3da0fbb7665643414b6dd0ee4a5a09a

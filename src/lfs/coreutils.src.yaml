@@ -1,0 +1,4 @@
+name: coreutils
+remotes:
+  - url: http://www.linuxfromscratch.org/patches/lfs/10.0-rc1/coreutils-8.32-i18n-1.patch
+    sha3: a0e60c22928530c91caaa06b90dae071713a4e60b9c891da49f0a0bb11466964

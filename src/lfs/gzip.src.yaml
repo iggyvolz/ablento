@@ -1,0 +1,4 @@
+name: gzip
+remotes:
+  - url: https://ftp.gnu.org/gnu/gzip/gzip-1.10.tar.xz
+    sha3: 9cc89b610eb2b70739cb716a9bc07b4bfdda7355b53c5b2100eb60a02136c24e

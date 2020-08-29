@@ -1,0 +1,4 @@
+name: bison
+remotes:
+  - url: https://ftp.gnu.org/gnu/bison/bison-3.7.1.tar.xz
+    sha3: ae639e1253ebfa0fff8a5048c36bfda935f10f2fca263f0a09bbfe58f0d100d6

@@ -1,5 +1,5 @@
-from: tempsys_glibc
-name: tempsys_libstdcpp
+from: xtoolchain_glibc
+name: xtoolchain_libstdcpp
 source: gcc
 script:
   - mkdir build

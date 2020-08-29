@@ -1,0 +1,4 @@
+name: bash
+remotes:
+  - url: http://www.linuxfromscratch.org/patches/lfs/10.0-rc1/bash-5.0-upstream_fixes-1.patch
+    sha3: d0dcba2cd2333755b402d6afcb8e258614a4c9a8a2ba9b1021b352e0b8581994

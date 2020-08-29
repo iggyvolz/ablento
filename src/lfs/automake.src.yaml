@@ -1,0 +1,4 @@
+name: automake
+remotes:
+  - url: https://ftp.gnu.org/gnu/automake/automake-1.16.2.tar.xz
+    sha3: 6c092466d2f12cff8090a0ce9ad0e5663ac9fb0eb19c009c402012c4e9e197c9

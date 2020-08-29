@@ -1,0 +1,4 @@
+name: e2fsprogs
+remotes:
+  - url: https://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v1.45.6/e2fsprogs-1.45.6.tar.gz
+    sha3: 87ba4a3305d76ed8f23a592736bb094d13259b1c77b7d162ba1b6a3c0b41fcf7

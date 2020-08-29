@@ -1,0 +1,4 @@
+name: acl
+remotes:
+  - url: https://download.savannah.gnu.org/releases/acl/acl-2.2.53.tar.gz
+    sha3: 7ef9b5af75e354c42db9babebc02bceb964dba23e86b44d28132e5e040534ee8

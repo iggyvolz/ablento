@@ -1,0 +1,4 @@
+name: make
+remotes:
+  - url: https://ftp.gnu.org/gnu/make/make-4.3.tar.gz
+    sha3: 13799ee4671e05b3d156938ed70d3f2df3215a629c7a88c43acc250d00ba4b91

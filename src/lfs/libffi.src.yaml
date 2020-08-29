@@ -1,0 +1,4 @@
+name: libffi
+remotes:
+  - url: https://sourceware.org/pub/libffi/libffi-3.3.tar.gz
+    sha3: 197a9f46c2b806f6c44acb6200446237e2c27ceb760403ac4a0b273c0360b2de

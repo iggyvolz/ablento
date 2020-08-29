@@ -1,0 +1,4 @@
+name: psmisc
+remotes:
+  - url: https://sourceforge.net/projects/psmisc/files/psmisc/psmisc-23.3.tar.xz
+    sha3: 0736f7ad81e9d052276be651d82fd76e60d6105389429a64a5a5eddad94db6b9

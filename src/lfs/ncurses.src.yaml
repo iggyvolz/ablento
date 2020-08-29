@@ -1,0 +1,4 @@
+name: ncurses
+remotes:
+  - url: https://ftp.gnu.org/gnu/ncurses/ncurses-6.2.tar.gz
+    sha3: 56c5bb1599c87bd18e1cf300c2e6cc16589ca43e37829821209ab5beb55e8d7e

@@ -1,0 +1,4 @@
+name: flex
+remotes:
+  - url: https://github.com/westes/flex/releases/download/v2.6.4/flex-2.6.4.tar.gz
+    sha3: cde654d28148d09eca97574c4201307cf1a6a90e887b304bcd2006b5cd46b220

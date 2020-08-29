@@ -1,0 +1,4 @@
+name: sysvinit
+remotes:
+  - url: http://www.linuxfromscratch.org/patches/lfs/10.0-rc1/sysvinit-2.97-consolidated-1.patch
+    sha3: 251b4f26e191fac826af5de33d3d52b8393464ae344626a5b4e777852750e59c

@@ -1,0 +1,4 @@
+name: iana
+remotes:
+  - url: http://anduin.linuxfromscratch.org/LFS/iana-etc-20200429.tar.gz
+    sha3: f10ff31c52c131ca650e35dda9039fcd46a78b62f6055def0f8a0fea01147069

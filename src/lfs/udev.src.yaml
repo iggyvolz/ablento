@@ -1,0 +1,4 @@
+name: udev
+remotes:
+  - url: http://anduin.linuxfromscratch.org/LFS/udev-lfs-20171102.tar.xz
+    sha3: 0cbee3e20aac4178e10307739e985fee6d8c0f6f1f9aebe927f35b8ddd6ecd37

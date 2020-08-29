@@ -1,0 +1,4 @@
+name: ninja
+remotes:
+  - url: https://github.com/ninja-build/ninja/archive/v1.10.0/ninja-1.10.0.tar.gz
+    sha3: 82fc8a4a82482fe7c0fe01baba3518fae3d0419272a36997f3a61adcfc297d48

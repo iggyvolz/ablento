@@ -1,0 +1,4 @@
+name: tcl
+remotes:
+  - url: https://downloads.sourceforge.net/tcl/tcl8.6.10-html.tar.gz
+    sha3: 2bdb6c20ab99c43d1487bac345f34fadac7ae2964e2e203db54edced8876a4c3

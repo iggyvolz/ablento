@@ -1,4 +1,4 @@
 name: gmp
 remotes:
-  - url: "https://ftp.gnu.org/gnu/gmp/gmp-6.2.0.tar.xz"
-    sha3: "cdee1f6303f0c842f5ea1863fcc0cc90eb8f65819eb84525644cecce8f581c41"
+  - url: https://ftp.gnu.org/gnu/gmp/gmp-6.2.0.tar.xz
+    sha3: cdee1f6303f0c842f5ea1863fcc0cc90eb8f65819eb84525644cecce8f581c41

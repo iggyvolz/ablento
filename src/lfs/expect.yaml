@@ -1,0 +1,4 @@
+name: expect5.45.4.tar.gz
+remotes:
+  - url: https://prdownloads.sourceforge.net/expect/expect5.45.4.tar.gz
+    sha3: d37c99076375ae199c93dc06252924ad04dc9a0f11e701e2e64436837a7fa42d

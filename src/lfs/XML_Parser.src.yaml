@@ -1,0 +1,4 @@
+name: XML_Parser
+remotes:
+  - url: https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-2.46.tar.gz
+    sha3: 8c5371891bc4d6f088fa2ed8202c08916d9f314523f924ea67774e4df1589fcc

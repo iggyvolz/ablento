@@ -1,5 +1,5 @@
-from: tempsys_linux_headers
-name: tempsys_glibc
+from: xtoolchain_linux_headers
+name: xtoolchain_glibc
 source: glibc,glibc_lfs_patch:/glibc-lfs-patch.patch
 script:
   - ln -sfv ../lib/ld-linux-x86-64.so.2 $LFS/lib64

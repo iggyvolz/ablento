@@ -1,0 +1,4 @@
+name: less
+remotes:
+  - url: http://www.greenwoodsoftware.com/less/less-551.tar.gz
+    sha3: 417eacfcf8dc604c4d831c5ba465e975a216f2daba4bfcc030dbba3262d8f8fb

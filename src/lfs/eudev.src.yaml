@@ -1,0 +1,4 @@
+name: eudev
+remotes:
+  - url: https://dev.gentoo.org/~blueness/eudev/eudev-3.2.9.tar.gz
+    sha3: 69d328b61d6ea26dcb9c3d64d707bf40f9d7c2b046d347557ab02c893947e881

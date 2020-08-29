@@ -1,0 +1,4 @@
+name: intltool
+remotes:
+  - url: https://launchpad.net/intltool/trunk/0.51.0/+download/intltool-0.51.0.tar.gz
+    sha3: c215547f72957e1727976aeaa7156517fb005a5c8fe0df30e7f546c990ca8d19

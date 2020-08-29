@@ -1,0 +1,4 @@
+name: kmod
+remotes:
+  - url: https://www.kernel.org/pub/linux/utils/kernel/kmod/kmod-27.tar.xz
+    sha3: ec61088f1d56dba866da64497cb4a7821251947a59bf9b10f8e9089198272e89

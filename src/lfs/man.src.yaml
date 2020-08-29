@@ -1,0 +1,4 @@
+name: man
+remotes:
+  - url: https://www.kernel.org/pub/linux/docs/man-pages/man-pages-5.08.tar.xz
+    sha3: 715436c80b8b1e1072e57e0e82ce57fba6b23aaa1311c08d644d92157532dceb

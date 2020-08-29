@@ -1,0 +1,4 @@
+name: gawk
+remotes:
+  - url: https://ftp.gnu.org/gnu/gawk/gawk-5.1.0.tar.xz
+    sha3: 7110ebe9c4fb48f9ab2ebcef8eb60f2b31e8cb3bbcaefe004a871c71657f7889

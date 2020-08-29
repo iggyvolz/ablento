@@ -1,0 +1,4 @@
+name: libcap
+remotes:
+  - url: https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-2.42.tar.xz
+    sha3: a24b3be24d14586d48806529591d8b9deecdf9f75dbe514f1a711b26b5daa23f

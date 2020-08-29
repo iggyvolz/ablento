@@ -1,0 +1,4 @@
+name: patch
+remotes:
+  - url: https://ftp.gnu.org/gnu/patch/patch-2.7.6.tar.xz
+    sha3: ed81c9aa2062006688e50adec68148660f4798a8f8a0f576d658417e816b94e7

@@ -1,0 +1,4 @@
+name: sysklogd
+remotes:
+  - url: https://www.infodrom.org/projects/sysklogd/download/sysklogd-1.5.1.tar.gz
+    sha3: de883f58469d19219fec6440a1a70de9adf8ced615e2684b59f644a1bd02f4a6

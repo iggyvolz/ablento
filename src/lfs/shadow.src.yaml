@@ -1,0 +1,4 @@
+name: shadow
+remotes:
+  - url: https://github.com/shadow-maint/shadow/releases/download/4.8.1/shadow-4.8.1.tar.xz
+    sha3: b0f578b81b5f4f46ab93dfbe7998b30707e90e9f5d8fcb41b88f2c2a3d8380c7

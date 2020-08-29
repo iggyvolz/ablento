@@ -1,0 +1,4 @@
+name: libpipeline
+remotes:
+  - url: https://download.savannah.gnu.org/releases/libpipeline/libpipeline-1.5.3.tar.gz
+    sha3: 32c76f172aa8c771292488ba7bb690f3c9b72326ff9d46838089d6cee63ea00a

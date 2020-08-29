@@ -1,0 +1,4 @@
+name: grep
+remotes:
+  - url: https://ftp.gnu.org/gnu/grep/grep-3.4.tar.xz
+    sha3: bcccf0ec2e6a4867dbdc53efcff36a563b1b5df067983413de424686a5ff8c54

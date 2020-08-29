@@ -1,0 +1,4 @@
+name: libtool
+remotes:
+  - url: https://ftp.gnu.org/gnu/libtool/libtool-2.4.6.tar.xz
+    sha3: 08f48e2ac31050c701c1da0ae816be56fea55eafe07e1230d4720a83e35adda1

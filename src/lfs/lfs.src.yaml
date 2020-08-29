@@ -1,0 +1,4 @@
+name: lfs
+remotes:
+  - url: http://www.linuxfromscratch.org/lfs/downloads/10.0-rc1/lfs-bootscripts-20200802.tar.xz
+    sha3: c24ef98760877e7b2e8f9544398093b6ce6fddcbca6bcb3f7ebfb222914451f6

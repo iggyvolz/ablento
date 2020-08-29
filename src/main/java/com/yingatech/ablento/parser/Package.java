@@ -60,7 +60,7 @@ public class Package {
     }
 
     public void save(Appendable writer, Collection<String> validSources) throws IOException, InvalidPackageException {
-        if(name == null || !Pattern.matches("^[a-zA-Z_]+$", name)) {
+        if(name == null || !Pattern.matches("^[a-zA-Z0-9_-]+$", name)) {
             throw new InvalidPackageException("Illegal name " + name);
         }
         // Set up package context

@@ -1,0 +1,4 @@
+name: openssl
+remotes:
+  - url: https://www.openssl.org/source/openssl-1.1.1g.tar.gz
+    sha3: 55b3c58f17e3028e28334e470c5f1c2a09ac0eff7356abc62570afe194402c1e

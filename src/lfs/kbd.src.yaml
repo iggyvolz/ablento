@@ -1,0 +1,4 @@
+name: kbd
+remotes:
+  - url: http://www.linuxfromscratch.org/patches/lfs/10.0-rc1/kbd-2.3.0-backspace-1.patch
+    sha3: 0dfc4f7cb8ecda28a5cdb77ac3a886837b5033914c6246ea62c7e75e4fa4288f

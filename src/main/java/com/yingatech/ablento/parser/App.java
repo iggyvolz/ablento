@@ -102,7 +102,7 @@ public class App
             }
         }
 
-        System.out.print("Writing packages in order: ");
+        System.out.print("Calculated package order: ");
         boolean first = true;
         for(Package pkg : packagesSorted) {
             if(first) {
@@ -112,6 +112,7 @@ public class App
             }
             System.out.print(pkg.getName());
         }
+        System.out.println();
 
         // Write all packages
         try(FileWriter fw = new FileWriter(new File("output/Dockerfile"), true)) {

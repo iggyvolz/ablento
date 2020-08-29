@@ -1,0 +1,4 @@
+name: sed
+remotes:
+  - url: https://ftp.gnu.org/gnu/sed/sed-4.8.tar.xz
+    sha3: 6c303d2767c3e035ba49ca976cd24dc665a03e2897577b4d7d7f3a538c4cb1b8

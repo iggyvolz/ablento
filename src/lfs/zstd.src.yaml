@@ -1,0 +1,4 @@
+name: zstd
+remotes:
+  - url: https://github.com/facebook/zstd/releases/download/v1.4.5/zstd-1.4.5.tar.gz
+    sha3: 72bd1a5b851e1772d5a4d2a17acaf5cc74afecd8568929023d6bc3a4b5a456b4
