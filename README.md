@@ -25,8 +25,6 @@ Supported formats:
 * .zip
 ### strip
 Distributed source files typically consist of an archive with a single folder inside of them.  Setting strip to true will take files inside of this folder.  Has no effect if extract is false.  Defaults to autodetecting (checks if there is exactly one file/folder within the extracted file).
-## script
-Script that is run to prepare the final source - list of strings.  Defaults to empty
 # Packages
 A package ends in .pkg.yaml
 ## name

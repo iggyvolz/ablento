@@ -62,8 +62,10 @@ public class Remote {
     private File download(String identifier) throws IOException {
         ReadableByteChannel input = Channels.newChannel(new URL(url).openStream());
         File file = new File("output/"+identifier);
-        try (FileOutputStream output = new FileOutputStream(file)) {
-            output.getChannel().transferFrom(input, 0, Long.MAX_VALUE);
+        if(!file.exists()) {
+            try (FileOutputStream output = new FileOutputStream(file)) {
+                output.getChannel().transferFrom(input, 0, Long.MAX_VALUE);
+            }
         }
         return file;
     }
@@ -142,7 +144,7 @@ public class Remote {
             writer.append("COPY ").append(identifier).append(" /context-compressed\n");
             writer.append("RUN mkdir -p /context/").append(destination).append(" && cd /context/").append(destination).append(" && tar xf /context-compressed || unzip /context-compressed\n");
         } else {
-            writer.append("COPY ").append(identifier).append(" /context/").append(destination).append("\n");
+            writer.append("COPY ").append(identifier).append(" /context").append(destination).append("\n");
         }
         if(strip == null || strip) {
             // Detect whether to strip, and strip a directory if possible

@@ -10,3 +10,7 @@ script:
   - cd build && make
   - cd build && make DESTDIR=$LFS install
   - $LFS/tools/libexec/gcc/$LFS_TGT/10.2.0/install-tools/mkheaders
+test:
+  - echo 'int main(){}' > dummy.c
+  - $LFS_TGT-gcc dummy.c
+  - "readelf -l a.out | grep 'Requesting program interpreter: /lib64/ld-linux-x86-64.so.2'"

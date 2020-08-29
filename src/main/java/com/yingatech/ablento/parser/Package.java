@@ -20,6 +20,9 @@ public class Package {
     }
     @JsonProperty
     private String from;
+    public String getFrom() {
+        return from;
+    }
     @JsonProperty
     private String source;
     private Map<String,String> getSources(Collection<String> validSources) throws InvalidPackageException {
@@ -62,10 +65,12 @@ public class Package {
         }
         // Set up package context
         writer.append("FROM ").append(from).append(" AS ").append(name).append("\n");
+        // Set number of threads
+        writer.append("ARG MAKEFLAGS=-j4\n");
         // Copy in sources
         for(Map.Entry<String,String> entry : getSources(validSources).entrySet())
         {
-            writer.append("COPY --chown=lfs:lfs --from=").append(entry.getKey()).append("-src / $BUILDDIR/").append(entry.getValue()).append("\n");
+            writer.append("COPY --chown=lfs:lfs --from=").append(entry.getKey()).append("-src /context $BUILDDIR/").append(entry.getValue()).append("\n");
         }
         // Set working directory
         writer.append("WORKDIR $BUILDDIR\n");

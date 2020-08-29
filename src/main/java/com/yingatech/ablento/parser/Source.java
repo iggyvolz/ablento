@@ -30,7 +30,7 @@ public class Source {
         }
         // Take only /context dir for final package
         writer.append("FROM scratch AS ").append(name).append("-src\n");
-        writer.append("COPY --from=").append(name).append("-src-build /context /\n");
+        writer.append("COPY --from=").append(name).append("-src-build /context /context\n");
     }
     public static Source read(File file) throws InvalidSourceException {
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory());

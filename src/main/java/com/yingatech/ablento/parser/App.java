@@ -71,19 +71,51 @@ public class App
             System.out.println("I/O exception while searching for files: " + e.getMessage());
             return;
         }
-        Collections.sort(packages, (a, b) -> {
-
-            return -1;
-        });
 
         Set<String> sourceNames = new HashSet<>(sources.keySet());
         // Add builtin sources
         sourceNames.add("base");
 
+        ArrayList<Package> packagesSorted = new ArrayList<>();
+        while(packages.size() > 0) {
+            // loop detector
+            boolean broken = false;
+            for(Package pkg : packages) {
+                // Check if packagesSorted has this object's parent
+                String pkgFrom = pkg.getFrom();
+                boolean hasParent = pkgFrom.equals("base");
+                for(Package parent : packagesSorted) {
+                    if(parent.getName().equals(pkgFrom)) {
+                        hasParent = true;
+                    }
+                }
+                if(hasParent) {
+                    broken = true;
+                    packagesSorted.add(pkg);
+                    packages.remove(pkg);
+                    break;
+                }
+            }
+            if(!broken) {
+                System.out.println("Infinite loop detected");
+                return;
+            }
+        }
+
+        System.out.print("Writing packages in order: ");
+        boolean first = true;
+        for(Package pkg : packagesSorted) {
+            if(first) {
+                first = false;
+            } else {
+                System.out.print(", ");
+            }
+            System.out.print(pkg.getName());
+        }
 
         // Write all packages
         try(FileWriter fw = new FileWriter(new File("output/Dockerfile"), true)) {
-            for (Package pkg: packages) {
+            for (Package pkg: packagesSorted) {
                 try {
                     System.out.println("Writing package " + pkg.getName());
                     pkg.save(fw, sourceNames);
