@@ -56,13 +56,13 @@ public class App
 
 
         // Get all packages
-        HashMap<String, Package> packages = new HashMap<>();
+        ArrayList<Package> packages = new ArrayList<>();
         try (Stream<Path> walk = Files.walk(Paths.get("src"))) {
             walk.filter(path->path.toFile().isFile()).filter(path->path.toFile().getName().endsWith(".pkg.yaml")).map(Path::toFile).forEach(file->{
                 try {
                     System.out.println("Parsing " + file.getAbsolutePath());
                     Package pkg = Package.read(file);
-                    packages.put(pkg.getName(), pkg);
+                    packages.add(pkg);
                 } catch(InvalidPackageException e) {
                     System.out.println("Error in source " + file.getAbsolutePath() + ": " + e.getMessage());
                 }
@@ -71,6 +71,10 @@ public class App
             System.out.println("I/O exception while searching for files: " + e.getMessage());
             return;
         }
+        Collections.sort(packages, (a, b) -> {
+
+            return -1;
+        });
 
         Set<String> sourceNames = new HashSet<>(sources.keySet());
         // Add builtin sources
@@ -79,7 +83,7 @@ public class App
 
         // Write all packages
         try(FileWriter fw = new FileWriter(new File("output/Dockerfile"), true)) {
-            for (Package pkg: packages.values()) {
+            for (Package pkg: packages) {
                 try {
                     System.out.println("Writing package " + pkg.getName());
                     pkg.save(fw, sourceNames);

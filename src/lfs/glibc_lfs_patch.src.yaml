@@ -1,0 +1,4 @@
+name: glibc_lfs_patch
+remotes:
+  - url: "http://www.linuxfromscratch.org/patches/lfs/10.0-rc1/glibc-2.32-fhs-1.patch"
+    sha3: "ef282f737e0df4644a34e4875b98590981a35a8f7308db48be56fdfdb4a205cf"

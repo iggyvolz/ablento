@@ -1,0 +1,4 @@
+name: glibc
+remotes:
+  - url: https://ftp.gnu.org/gnu/glibc/glibc-2.32.tar.xz
+    sha3: ef5bb920c1edf009d5c4d648b5434ac37303def1f567b8e99d24692b01be09ba

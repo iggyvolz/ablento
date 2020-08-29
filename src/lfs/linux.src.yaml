@@ -1,0 +1,4 @@
+name: linux
+remotes:
+  - url: https://www.kernel.org/pub/linux/kernel/v5.x/linux-5.8.1.tar.xz
+    sha3: 6f98e42ec0442521f94327b4ba5905f73b95cb8faafa37ecc4248531a6c1e367
